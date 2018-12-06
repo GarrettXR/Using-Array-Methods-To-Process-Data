@@ -48,21 +48,24 @@ var wood = items.filter(function(a) {
 document.querySelector("#answer4").innerHTML = wood
 
 let list = ""
-
 var currency = items.filter(function(a){
-	if (a.materials >= 8){
+	if (a.materials.length >= 8){
 		return true
 	} else {
 		return false
 	}
-}).map(function(a){
-	return {
-		title: a.title,
-		numberOfMaterials: a.materials.length
-		materials: a.materials
-	}
 }).forEach(function(a){
-	list += ~ `${a.title} ${a.materials.length} ${a.materials}`
+	list += `${a.title} has ${a.materials.length} materials ${a.materials}`
 })
 
-document.querySelector("#answer3").innerHTML = list
+document.querySelector("#answer5").innerHTML = list
+
+var made = items.filter(function(a){
+	if (a.who_made === "i_did") {
+		return true
+	} else {
+		return false
+	}
+})
+
+document.querySelector("#answer6").innerHTML = `${made.length} were made by their sellers.`
