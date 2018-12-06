@@ -5,7 +5,7 @@ var avg = items.reduce(function(a,b){
 document.querySelector("#answer1").innerHTML = `The average price is $${avg.toFixed(2)}`
 
 var cost = items.filter(function(a) {
-	if ( a.price >= 14 && a.price <= 18){
+	if ( a.price > 14 && a.price < 18){
 		return true
 	} else { 
 		return false
